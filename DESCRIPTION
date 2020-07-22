@@ -1,19 +1,18 @@
 Package: bookmakerXML
-Title: An Amazing Shiny App
+Title: Download Odds From Bookmaker
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
+    person(given = "Mr",
+           family = "Vig",
            role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
+           email = "vyigrys@protonmail.com")
+Description: Download and view odds from bookmaker.eu
 License: MIT + file LICENSE
 Imports: 
     config,
     golem,
     shiny,
     attempt,
-    DT,
     glue,
     htmltools,
     reactable,
