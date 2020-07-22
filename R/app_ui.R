@@ -9,8 +9,24 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # List the first level UI elements here 
-    fluidPage(
-      h1("bookmakerXML")
+    miniUI::miniPage(
+      miniUI::gadgetTitleBar("Bookmaker Odds"),
+      miniUI::miniContentPanel(
+        miniUI::miniButtonBlock(
+          shiny::actionButton("click", "Get odds"),
+          shiny::downloadButton("download", "Download")),
+        shiny::radioButtons(
+          "bet_type",
+          "",
+          choiceNames = c("Matchups", "Futures"),
+          choiceValues = c("matchups", "futures"),
+          selected = "matchups",
+          inline = TRUE
+        ),
+        shiny::uiOutput("league_drpdwn"),
+        shinycssloaders::withSpinner(reactable::reactableOutput("tbl"),
+                                     type = 6)
+      )
     )
   )
 }

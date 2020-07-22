@@ -9,9 +9,10 @@ run_app <- function(
   ...
 ) {
   with_golem_options(
-    app = shinyApp(
-      ui = app_ui, 
-      server = app_server
+    app = shiny::runGadget(
+      app = app_ui, 
+      server = app_server,
+      viewer = shiny::paneViewer(500)
     ), 
     golem_opts = list(...)
   )

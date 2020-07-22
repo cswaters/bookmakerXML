@@ -1,0 +1,5 @@
+Name: BookmakerOdds
+Description: Download And View Bookmaker.eu Odds
+Binding: run_app
+Interactive: true
+

@@ -11,7 +11,24 @@ License: MIT + file LICENSE
 Imports: 
     config,
     golem,
-    shiny
+    shiny,
+    attempt,
+    DT,
+    glue,
+    htmltools,
+    reactable,
+    dplyr,
+    purrr,
+    tidyr,
+    magrittr,
+    cdata,
+    hms,
+    lubridate,
+    stringr,
+    wrapr,
+    xml2,
+    shinycssloaders,
+    miniUI
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
