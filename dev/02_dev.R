@@ -19,10 +19,16 @@ usethis::use_package( "reactable" )
 usethis::use_package( "dplyr" )
 usethis::use_package( "purrr" )
 usethis::use_package( "tidyr" )
+usethis::use_package( "stringr" )
+usethis::use_package( "cdata" )
+usethis::use_package( "wrapr" )
+usethis::use_package( "lubridate" )
+usethis::use_package( "hms" )
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-# golem::add_module( name = "name_of_module1" ) # Name of the module
+golem::add_module( name = "reactable_odds" ) # Name of the module
+golem::add_module( name = "download_button" )
 # golem::add_module( name = "name_of_module2" ) # Name of the module
 
 ## Add helper functions ----

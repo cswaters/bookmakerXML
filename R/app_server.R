@@ -16,32 +16,16 @@ app_server <- function( input, output, session ) {
       shiny::renderUI(shiny::selectizeInput("desc",
                                             "Select sport",
                                             choices = descriptions()))
-    output$download <- shiny::downloadHandler(
-      filename = function() {
-        f_name <- bm_mk_fname(input$desc)
-      },
-      content = function(file) {
-        utils::write.csv(
-          x = bm_xml_parse_pipeline(odds(),
-                                    input$bet_type,
-                                    shiny::req(input$desc)),
-          file = file,
-          row.names = FALSE
-        )
-      }
-    )
-    output$tbl <- reactable::renderReactable({
-      grp_by <- ifelse(input$bet_type == "futures", "dt",
-                       c("period", "dt"))
-      bm_mk_reactable_tbl(df = bm_tbl_ouput_pipeline(
-        shiny::req(odds()),
-        input$bet_type,
-        shiny::req(input$desc)
-      ),
-      grp_by = grp_by)
-      
-    })
+    bet_type <- reactive(input$bet_type)
+    desc <- reactive(input$desc)
     
+    # Download odds button
+    mod_download_button_server("download_button_ui_1", odds, bet_type, desc)
+    # Output odds to reactable table
+    mod_reactable_odds_server("reactable_odds_ui_1",
+                              odds, 
+                              bet_type,
+                              desc)
     
   })
   shiny::observeEvent(input$done, {

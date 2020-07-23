@@ -14,7 +14,9 @@ app_ui <- function(request) {
       miniUI::miniContentPanel(
         miniUI::miniButtonBlock(
           shiny::actionButton("click", "Get odds"),
-          shiny::downloadButton("download", "Download")),
+          
+          mod_download_button_ui("download_button_ui_1")
+          ),
         shiny::radioButtons(
           "bet_type",
           "",
@@ -24,8 +26,7 @@ app_ui <- function(request) {
           inline = TRUE
         ),
         shiny::uiOutput("league_drpdwn"),
-        shinycssloaders::withSpinner(reactable::reactableOutput("tbl"),
-                                     type = 6)
+        mod_reactable_odds_ui("reactable_odds_ui_1")
       )
     )
   )
