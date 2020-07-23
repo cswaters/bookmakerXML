@@ -16,40 +16,36 @@ knitr::opts_chunk$set(
 # bookmakerXML
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-The goal of bookmakerXML is to ...
+`bookmakerXML` is a Rstudio add-in for displaying odds from bookmaker.eu.
+
+`bookmakerXML` downloads odds from  [lines.bookmaker.eu](https://lines.bookmaker.eu) in xml format.
 
 ## Installation
 
-You can install the released version of bookmakerXML from [CRAN](https://CRAN.R-project.org) with:
+Only on github
 
 ``` r
-install.packages("bookmakerXML")
+remotes::install_github("cswaters/bookmakerXML")
 ```
 
-## Example
+Because this add-in was written for personal use I didn't try to minimize the number of dependencies.
 
-This is a basic example which shows you how to solve a common problem:
+`bookmakerXML` will install the following packages:
 
-```{r example}
-library(bookmakerXML)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+- `golem`
+- `config`
+- `attempts`
+- `dplyr`
+- `purrr`
+- `magrittr`
+- `tidyr`
+- `lubridate`
+- `xml2`
+- `shiny`
+- `miniUI`
+- `reactable`
+- `cdata`
+- `wrapr`
+- `shinycssloaders`
